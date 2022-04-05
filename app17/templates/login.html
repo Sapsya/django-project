@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+<html>
+<head>
+</head>
+<body>
+{% for msg in messages %}
+           <div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Hey!</strong>{{ msg }}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+ {% endfor %}
+<form action="" method="post">
+ {% csrf_token %}
+ <table>
+ <tr>
+ <td>{{ form.as_table }}</td>
+ </tr>
+ </table>
+ <input type="submit" value="LOGIN">
+</form>
+</body>
+<html>
+{% endblock %}
